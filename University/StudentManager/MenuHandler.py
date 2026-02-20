@@ -1,5 +1,5 @@
 import StudentHandler
-
+import TeacherHandler
 
 def mainMenu():
     while True:
@@ -103,11 +103,18 @@ def TeacherMenu():
                     print("Exiting the system")
                     break
                 case "1":
-                    print("set grades")
+                    print("seting grades")
+                    name = input("Enter students name: ")
+                    grade = input("Enter your grades: ")
+                    TeacherHandler.TeacherHandler.SetGrade(name, grade)
                 case "2":
                     print("set absences")
+                    name = input("Enter students name: ")
+                    TeacherHandler.TeacherHandler.SetAbsence(name)
                 case "3":
                     print("edit information")
+                    info = input("What do you want to edit?: ")
+                    TeacherHandler.TeacherHandler.editInfo(info)
                 case _:
                     print("Invalid option! Please try again.")
         else:
